@@ -1,0 +1,13 @@
+[Unit]
+Description=fastapi-swap-learning
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/fastapi-swap-learning
+ExecStart=/opt/fastapi-swap-learning/.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
+Restart=on-failure
+User=www-data
+
+[Install]
+WantedBy=multi-user.target
