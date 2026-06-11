@@ -11,3 +11,8 @@ def read_root():
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+
+@app.get("/greeting")
+def greeting(name: str):
+    return {"message": f"Hello, {name}!"}
